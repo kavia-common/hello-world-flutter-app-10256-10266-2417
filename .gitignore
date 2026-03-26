@@ -6,11 +6,13 @@ __pycache__/
 *$py.class
 *.so
 .Python
+build/
 develop-eggs/
 dist/
 downloads/
 eggs/
 .eggs/
+lib64/
 sdist/
 var/
 wheels/
