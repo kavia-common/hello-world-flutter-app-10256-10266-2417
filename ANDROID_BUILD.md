@@ -52,7 +52,13 @@ flutter build apk --debug
 flutter build apk --release
 ```
 
-Note: This Flutter module does not include an `android/gradlew` wrapper script (it relies on Flutter's embedded Gradle invocation), so `./android/gradlew -p android clean` is not applicable here.
+Note: This project includes an `android/gradlew` wrapper script, and you can also clean via Gradle if needed:
+```bash
+cd android
+./gradlew clean
+```
+
+Additionally, this repo includes a small Gradle workaround that deletes `android/app/build/outputs/flutter-apk` before `assembleRelease` to avoid intermittent `chmod` / `Operation not permitted` failures on some preview/CI filesystems.
 
 ### Other issues
 - If you see Gradle download issues, retry (network/transient repository failures can happen during dependency fetch).

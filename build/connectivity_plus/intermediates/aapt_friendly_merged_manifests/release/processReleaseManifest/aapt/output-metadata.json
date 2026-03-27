@@ -5,7 +5,7 @@
     "kind": "Directory"
   },
   "applicationId": "dev.fluttercommunity.plus.connectivity",
-  "variantName": "debug",
+  "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",

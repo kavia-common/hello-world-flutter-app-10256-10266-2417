@@ -17,169 +17,171 @@
 15-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/debug/AndroidManifest.xml:6:22-64
 16    <!-- Location permissions required by geolocator for ride location features -->
 17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-17-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:3:5-79
-17-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:3:22-76
+17-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:4:5-79
+17-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:4:22-76
 18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-18-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:4:5-81
-18-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:4:22-78
+18-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:5:5-81
+18-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:5:22-78
 19    <!--
 20 Required to query activities that can process text, see:
 21         https://developer.android.com/training/package-visibility and
 22         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
-23
-24         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
-25    -->
-26    <queries>
-26-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:48:5-53:15
-27        <intent>
-27-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:49:9-52:18
-28            <action android:name="android.intent.action.PROCESS_TEXT" />
-28-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:50:13-72
-28-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:50:21-70
-29
-30            <data android:mimeType="text/plain" />
-30-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:51:13-50
-30-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:51:19-48
-31        </intent>
-32    </queries>
-33
-34    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-34-->[:connectivity_plus] /home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/build/connectivity_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-79
-34-->[:connectivity_plus] /home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/build/connectivity_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:22-76
-35
-36    <permission
-36-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
-37        android:name="com.froyo.ridekaro.ride_karo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-37-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
-38        android:protectionLevel="signature" />
-38-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
-39
-40    <uses-permission android:name="com.froyo.ridekaro.ride_karo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-40-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
-40-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
-41
-42    <application
-43        android:name="android.app.Application"
-44        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-44-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
-45        android:debuggable="true"
-46        android:extractNativeLibs="true"
-47        android:icon="@mipmap/ic_launcher"
-48        android:label="ride_karo" >
-49        <activity
-50            android:name="com.froyo.ridekaro.ride_karo.MainActivity"
-51            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-52            android:exported="true"
-53            android:hardwareAccelerated="true"
-54            android:launchMode="singleTop"
-55            android:taskAffinity=""
-56            android:theme="@style/LaunchTheme"
-57            android:windowSoftInputMode="adjustResize" >
-58
-59            <!--
-60                 Specifies an Android theme to apply to this Activity as soon as
-61                 the Android process has started. This theme is visible to the user
-62                 while the Flutter UI initializes. After that, this theme continues
-63                 to determine the Window background behind the Flutter UI.
-64            -->
-65            <meta-data
-66                android:name="io.flutter.embedding.android.NormalTheme"
-67                android:resource="@style/NormalTheme" />
-68
-69            <intent-filter>
-70                <action android:name="android.intent.action.MAIN" />
-71
-72                <category android:name="android.intent.category.LAUNCHER" />
-73            </intent-filter>
-74        </activity>
+23         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
+24    -->
+25    <queries>
+25-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:53:5-58:15
+26        <intent>
+26-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:54:9-57:18
+27            <action android:name="android.intent.action.PROCESS_TEXT" />
+27-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:55:13-73
+27-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:55:21-70
+28
+29            <data android:mimeType="text/plain" />
+29-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:56:13-51
+29-->/home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/android/app/src/main/AndroidManifest.xml:56:19-48
+30        </intent>
+31    </queries>
+32
+33    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+33-->[:connectivity_plus] /home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/build/connectivity_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-79
+33-->[:connectivity_plus] /home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/build/connectivity_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:22-76
+34
+35    <permission
+35-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+36        android:name="com.froyo.ridekaro.ride_karo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+36-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+37        android:protectionLevel="signature" />
+37-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+38
+39    <uses-permission android:name="com.froyo.ridekaro.ride_karo.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+39-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+39-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+40
+41    <application
+42        android:name="android.app.Application"
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.13.1] /home/kavia/.gradle/caches/8.10.2/transforms/dfc2fbca530748e569b0737b09fa016f/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+44        android:debuggable="true"
+45        android:extractNativeLibs="true"
+46        android:icon="@mipmap/ic_launcher"
+47        android:label="ride_karo" >
+48        <activity
+49            android:name="com.froyo.ridekaro.ride_karo.MainActivity"
+50            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+51            android:exported="true"
+52            android:hardwareAccelerated="true"
+53            android:launchMode="singleTop"
+54            android:taskAffinity=""
+55            android:theme="@style/LaunchTheme"
+56            android:windowSoftInputMode="adjustResize" >
+57
+58            <!--
+59                 Specifies an Android theme to apply to this Activity as soon as
+60                 the Android process has started. This theme is visible to the user
+61                 while the Flutter UI initializes. After that, this theme continues
+62                 to determine the Window background behind the Flutter UI.
+63            -->
+64            <meta-data
+65                android:name="io.flutter.embedding.android.NormalTheme"
+66                android:resource="@style/NormalTheme" />
+67
+68            <intent-filter>
+69                <action android:name="android.intent.action.MAIN" />
+70
+71                <category android:name="android.intent.category.LAUNCHER" />
+72            </intent-filter>
+73        </activity>
+74
 75        <!--
 76             Don't delete the meta-data below.
 77             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 78        -->
-79        <!--
-80             Google Maps API key for google_maps_flutter plugin.
-81             Matches the Connected_Living app's debug google_maps_api.xml key.
-82             Replace with a billing-enabled key for production use.
-83        -->
-84        <meta-data
-85            android:name="com.google.android.geo.API_KEY"
-86            android:value="AIzaSyCv_5zK9gY5rZfL36LspmVQIBXJ3wSrAzQ" />
-87        <meta-data
-88            android:name="flutterEmbedding"
-89            android:value="2" />
-90
-91        <uses-library
-91-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
-92            android:name="androidx.window.extensions"
-92-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
-93            android:required="false" />
-93-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
-94        <uses-library
-94-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
-95            android:name="androidx.window.sidecar"
-95-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
-96            android:required="false" />
-96-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
-97
-98        <provider
-98-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
-99            android:name="androidx.startup.InitializationProvider"
-99-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
-100            android:authorities="com.froyo.ridekaro.ride_karo.androidx-startup"
-100-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
-101            android:exported="false" >
-101-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
-102            <meta-data
-102-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-103                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-103-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-104                android:value="androidx.startup" />
-104-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
-105            <meta-data
-105-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-106                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-106-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-107                android:value="androidx.startup" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-108        </provider>
-109
-110        <receiver
-110-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-111            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-111-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-112            android:directBootAware="false"
-112-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-113            android:enabled="true"
-113-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-114            android:exported="true"
-114-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-115            android:permission="android.permission.DUMP" >
-115-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-116            <intent-filter>
-116-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-117                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-117-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-117-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-118            </intent-filter>
-119            <intent-filter>
-119-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-120                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-120-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-120-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-121            </intent-filter>
-122            <intent-filter>
-122-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-123                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-123-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-123-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-124            </intent-filter>
-125            <intent-filter>
-125-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-126                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-126-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-126-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-127            </intent-filter>
-128        </receiver>
-129    </application>
-130
-131</manifest>
+79
+80
+81        <!--
+82             Google Maps API key for google_maps_flutter plugin.
+83             NOTE: Provide this at build time in android/app/src/main/res/values/google_maps_api.xml
+84             (e.g. <string name="google_maps_key">YOUR_KEY</string>) to avoid hardcoding secrets.
+85        -->
+86        <meta-data
+87            android:name="com.google.android.geo.API_KEY"
+88            android:value="@string/google_maps_key" />
+89        <meta-data
+90            android:name="flutterEmbedding"
+91            android:value="2" />
+92
+93        <uses-library
+93-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+94            android:name="androidx.window.extensions"
+94-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+95            android:required="false" />
+95-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+96        <uses-library
+96-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+97            android:name="androidx.window.sidecar"
+97-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+98            android:required="false" />
+98-->[androidx.window:window:1.2.0] /home/kavia/.gradle/caches/8.10.2/transforms/aed2861b2b6894f7067df3f3f96b791f/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+99
+100        <provider
+100-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+101            android:name="androidx.startup.InitializationProvider"
+101-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+102            android:authorities="com.froyo.ridekaro.ride_karo.androidx-startup"
+102-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+103            android:exported="false" >
+103-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+104            <meta-data
+104-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+105                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+105-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+106                android:value="androidx.startup" />
+106-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/kavia/.gradle/caches/8.10.2/transforms/bb10008c4b33ee9597583412a41828ed/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+107            <meta-data
+107-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+108                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+108-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+109                android:value="androidx.startup" />
+109-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+110        </provider>
+111
+112        <receiver
+112-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+113            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+113-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+114            android:directBootAware="false"
+114-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+115            android:enabled="true"
+115-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+116            android:exported="true"
+116-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+117            android:permission="android.permission.DUMP" >
+117-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+118            <intent-filter>
+118-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+119                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+119-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+120            </intent-filter>
+121            <intent-filter>
+121-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+122                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+122-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+123            </intent-filter>
+124            <intent-filter>
+124-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+125                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+125-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+126            </intent-filter>
+127            <intent-filter>
+127-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+128                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+128-->[androidx.profileinstaller:profileinstaller:1.3.1] /home/kavia/.gradle/caches/8.10.2/transforms/5aacd87baa6feaa7bece87b01e7698f0/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+129            </intent-filter>
+130        </receiver>
+131    </application>
+132
+133</manifest>
