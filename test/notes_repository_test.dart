@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 import 'package:offline_notes/features/notes/data/local/notes_dao.dart';
 import 'package:offline_notes/features/notes/data/local/notes_database.dart';
@@ -9,6 +10,11 @@ import 'package:offline_notes/features/notes/data/repository/default_notes_repos
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
+
+  // sqflite uses platform-specific implementations on mobile. In `flutter test`
+  // (VM/host), we must explicitly initialize the FFI implementation.
+  sqfliteFfiInit();
+  databaseFactory = databaseFactoryFfi;
 
   Future<NotesDatabase> _openTestDb() async {
     final dir = await Directory.systemTemp.createTemp('offline_notes_test_');
