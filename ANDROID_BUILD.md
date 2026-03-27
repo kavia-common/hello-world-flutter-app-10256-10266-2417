@@ -34,6 +34,26 @@ The current Android Gradle configuration uses **debug signing for the release bu
 For production distribution, configure proper release signing in `android/app/build.gradle.kts` using a keystore.
 
 ## Troubleshooting
+
+### Permission / `chmod` failure during APK copy (`Operation not permitted`)
+If you see an error similar to:
+
+- `Could not set file mode 777 on '.../app-debug.apk'`
+- `chmod ... (errno 1: Operation not permitted)`
+
+it usually means previous build artifacts under `build/` were created by a different user (commonly `root`), and the current build user cannot modify them.
+
+Fix by cleaning both Flutter and Gradle outputs, then rebuilding:
+
+```bash
+flutter clean
+./android/gradlew -p android clean
+flutter pub get
+flutter build apk --debug
+flutter build apk --release
+```
+
+### Other issues
 - If you see Gradle download issues, retry (network/transient repository failures can happen during dependency fetch).
 - If the Android SDK is missing, run:
   ```bash
