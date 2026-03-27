@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:offline_notes/features/notes/data/local/notes_dao.dart';
+import 'package:offline_notes/features/notes/data/local/notes_local_data_source.dart';
 import 'package:offline_notes/features/notes/data/remote/notes_api.dart';
 import 'package:offline_notes/features/notes/data/repository/notes_repository.dart';
 import 'package:offline_notes/features/notes/data/sync/sync_status.dart';
@@ -11,7 +11,7 @@ import 'package:offline_notes/features/notes/domain/note.dart';
 
 class DefaultNotesRepository implements NotesRepository {
   DefaultNotesRepository({
-    required NotesDao dao,
+    required NotesLocalDataSource dao,
     required NotesApi api,
     Uuid? uuid,
     int Function()? now,
@@ -20,7 +20,7 @@ class DefaultNotesRepository implements NotesRepository {
         _uuid = uuid ?? const Uuid(),
         _now = now ?? (() => DateTime.now().millisecondsSinceEpoch);
 
-  final NotesDao _dao;
+  final NotesLocalDataSource _dao;
   final NotesApi _api;
   final Uuid _uuid;
   final int Function() _now;

@@ -254,6 +254,12 @@
       "languageVersion": "3.7"
     },
     {
+      "name": "sqflite_common_ffi",
+      "rootUri": "file:///home/kavia/.pub-cache/hosted/pub.dev/sqflite_common_ffi-2.3.6",
+      "packageUri": "lib/",
+      "languageVersion": "3.7"
+    },
+    {
       "name": "sqflite_darwin",
       "rootUri": "file:///home/kavia/.pub-cache/hosted/pub.dev/sqflite_darwin-2.4.2",
       "packageUri": "lib/",
@@ -262,6 +268,12 @@
     {
       "name": "sqflite_platform_interface",
       "rootUri": "file:///home/kavia/.pub-cache/hosted/pub.dev/sqflite_platform_interface-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "sqlite3",
+      "rootUri": "file:///home/kavia/.pub-cache/hosted/pub.dev/sqlite3-2.9.4",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
@@ -350,7 +362,7 @@
       "languageVersion": "3.7"
     }
   ],
-  "generated": "2026-03-27T05:36:38.118438Z",
+  "generated": "2026-03-27T06:50:45.075605Z",
   "generator": "pub",
   "generatorVersion": "3.7.0",
   "flutterRoot": "file:///opt/flutter",

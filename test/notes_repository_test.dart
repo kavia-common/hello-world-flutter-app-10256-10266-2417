@@ -1,29 +1,14 @@
-import 'dart:io';
-
 import 'package:flutter_test/flutter_test.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
-import 'package:offline_notes/features/notes/data/local/notes_dao.dart';
-import 'package:offline_notes/features/notes/data/local/notes_database.dart';
+import 'package:offline_notes/features/notes/data/local/in_memory_notes_local_data_source.dart';
 import 'package:offline_notes/features/notes/data/remote/in_memory_notes_api.dart';
 import 'package:offline_notes/features/notes/data/repository/default_notes_repository.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  // sqflite uses platform-specific implementations on mobile. In `flutter test`
-  // (VM/host), we must explicitly initialize the FFI implementation.
-  sqfliteFfiInit();
-  databaseFactory = databaseFactoryFfi;
-
-  Future<NotesDatabase> _openTestDb() async {
-    final dir = await Directory.systemTemp.createTemp('offline_notes_test_');
-    return NotesDatabase.open(dbDirectoryPath: dir.path);
-  }
-
   test('search treats % and _ literally (in-memory filter)', () async {
-    final db = await _openTestDb();
-    final dao = NotesDao(db.db);
+    final dao = InMemoryNotesLocalDataSource();
     final api = InMemoryNotesApi();
     final repo = DefaultNotesRepository(dao: dao, api: api);
 
@@ -35,14 +20,11 @@ void main() {
 
     final resultsUnderscore = await repo.observeNotes('_').first;
     expect(resultsUnderscore.any((n) => n.id == id), isTrue);
-
-    await db.db.close();
   });
 
   test('sync uses LWW: remote older does not overwrite newer local', () async {
     int now = 1000;
-    final db = await _openTestDb();
-    final dao = NotesDao(db.db);
+    final dao = InMemoryNotesLocalDataSource();
     final api = InMemoryNotesApi();
     final repo = DefaultNotesRepository(dao: dao, api: api, now: () => now);
 
@@ -63,14 +45,11 @@ void main() {
     final after = await repo.observeNote(id).first;
     expect(after!.title, 't2');
     expect(after.updatedAt, 2000);
-
-    await db.db.close();
   });
 
   test('tombstone delete uploaded then purged locally after sync', () async {
     int now = 1000;
-    final db = await _openTestDb();
-    final dao = NotesDao(db.db);
+    final dao = InMemoryNotesLocalDataSource();
     final api = InMemoryNotesApi();
     final repo = DefaultNotesRepository(dao: dao, api: api, now: () => now);
 
@@ -85,7 +64,5 @@ void main() {
     // After purge, observeNotes should not contain it; observeNote might be null due to purge.
     final list = await repo.observeNotes('').first;
     expect(list.any((n) => n.id == id), isFalse);
-
-    await db.db.close();
   });
 }

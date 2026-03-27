@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 import 'package:offline_notes/app/app.dart';
 import 'package:offline_notes/app/services.dart';
+import 'package:offline_notes/features/notes/data/local/in_memory_notes_local_data_source.dart';
+import 'package:offline_notes/features/notes/data/remote/in_memory_notes_api.dart';
+import 'package:offline_notes/features/notes/data/repository/default_notes_repository.dart';
 
 Future<void> _pumpUntilFound(
   WidgetTester tester,
@@ -26,12 +28,16 @@ Future<void> _pumpUntilFound(
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  // Ensure sqflite is usable in host tests (no platform channels).
-  sqfliteFfiInit();
-  databaseFactory = databaseFactoryFfi;
+  DefaultNotesRepository _makeTestRepository() {
+    final dao = InMemoryNotesLocalDataSource();
+    final api = InMemoryNotesApi();
+    return DefaultNotesRepository(dao: dao, api: api);
+  }
 
   testWidgets('app boots', (tester) async {
-    await Services.init();
+    Services.resetForTest();
+    await Services.init(repository: _makeTestRepository());
+
     await tester.pumpWidget(const OfflineNotesApp());
 
     // Avoid pumpAndSettle() hangs due to ongoing timers/streams.
@@ -41,7 +47,9 @@ void main() {
   });
 
   testWidgets('create note shows in list', (tester) async {
-    await Services.init();
+    Services.resetForTest();
+    await Services.init(repository: _makeTestRepository());
+
     await tester.pumpWidget(const OfflineNotesApp());
 
     await _pumpUntilFound(tester, find.byIcon(Icons.add));
