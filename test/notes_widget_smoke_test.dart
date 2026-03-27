@@ -28,7 +28,7 @@ Future<void> _pumpUntilFound(
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  DefaultNotesRepository _makeTestRepository() {
+  DefaultNotesRepository makeTestRepository() {
     final dao = InMemoryNotesLocalDataSource();
     final api = InMemoryNotesApi();
     return DefaultNotesRepository(dao: dao, api: api);
@@ -36,7 +36,7 @@ void main() {
 
   testWidgets('app boots', (tester) async {
     Services.resetForTest();
-    await Services.init(repository: _makeTestRepository());
+    await Services.init(repository: makeTestRepository());
 
     await tester.pumpWidget(const OfflineNotesApp());
 
@@ -48,7 +48,7 @@ void main() {
 
   testWidgets('create note shows in list', (tester) async {
     Services.resetForTest();
-    await Services.init(repository: _makeTestRepository());
+    await Services.init(repository: makeTestRepository());
 
     await tester.pumpWidget(const OfflineNotesApp());
 
