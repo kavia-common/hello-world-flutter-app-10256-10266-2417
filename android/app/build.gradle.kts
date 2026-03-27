@@ -44,3 +44,19 @@ android {
 flutter {
     source = "../.."
 }
+
+/**
+ * Workaround for CI/preview environments where Gradle/AGP can fail to chmod the final APK
+ * under build/app/outputs/flutter-apk (Operation not permitted) if the directory contains
+ * stale artifacts created by a different user or on a filesystem with restricted chmod.
+ *
+ * We proactively remove the flutter-apk output directory before assembling Release,
+ * forcing Gradle to recreate it with correct ownership/permissions for the current user.
+ */
+val cleanFlutterApkOutputsForRelease = tasks.register<Delete>("cleanFlutterApkOutputsForRelease") {
+    delete(layout.buildDirectory.dir("outputs/flutter-apk"))
+}
+
+tasks.matching { it.name == "assembleRelease" }.configureEach {
+    dependsOn(cleanFlutterApkOutputsForRelease)
+}

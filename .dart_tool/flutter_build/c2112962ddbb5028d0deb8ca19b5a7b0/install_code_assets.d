@@ -1,0 +1,1 @@
+ /home/kavia/workspace/code-generation/hello-world-flutter-app-10256-10266-2417/.dart_tool/flutter_build/c2112962ddbb5028d0deb8ca19b5a7b0/native_assets.json: 

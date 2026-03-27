@@ -1,5 +1,5 @@
-name: react_agent
-description: "ReAct Agent - Flutter migration of swift-ai-agent-demo-1905. Demonstrates the ReAct (Reasoning + Acting) AI agent pattern using OpenAI GPT models."
+name: offline_notes
+description: "Offline-first notes app (Flutter rewrite) with local persistence and client-only sync using LWW conflict resolution."
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -10,11 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  http: ^1.2.0
   intl: ^0.19.0
+  path: ^1.9.0
   path_provider: ^2.1.2
+  sqflite: ^2.4.2
   uuid: ^4.3.3
-  flutter_secure_storage: ^9.2.2
+  connectivity_plus: ^6.1.3
 
 dev_dependencies:
   flutter_test:
