@@ -43,15 +43,16 @@ If you see an error similar to:
 
 it usually means previous build artifacts under `build/` were created by a different user (commonly `root`), and the current build user cannot modify them.
 
-Fix by cleaning both Flutter and Gradle outputs, then rebuilding:
+Fix by cleaning Flutter outputs, then rebuilding:
 
 ```bash
 flutter clean
-./android/gradlew -p android clean
 flutter pub get
 flutter build apk --debug
 flutter build apk --release
 ```
+
+Note: This Flutter module does not include an `android/gradlew` wrapper script (it relies on Flutter's embedded Gradle invocation), so `./android/gradlew -p android clean` is not applicable here.
 
 ### Other issues
 - If you see Gradle download issues, retry (network/transient repository failures can happen during dependency fetch).
