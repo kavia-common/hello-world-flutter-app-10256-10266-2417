@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Google Maps Android API key used by google_maps_flutter.
+
+      IMPORTANT:
+      - Replace this placeholder with your own key for real map functionality.
+      - Keeping a placeholder avoids hardcoding secrets in source control.
+    -->
+    <string name="google_maps_key">YOUR_GOOGLE_MAPS_API_KEY</string>
+</resources>
