@@ -2866,6 +2866,7 @@ androidx.window.reflection.ReflectionUtils:
 androidx.window.reflection.WindowExtensionsConstants
 com.froyo.ridekaro.ride_karo.R$drawable
 com.froyo.ridekaro.ride_karo.R$mipmap
+com.froyo.ridekaro.ride_karo.R$string
 com.froyo.ridekaro.ride_karo.R$style
 com.froyo.ridekaro.ride_karo.R
 com.getkeepsafe.relinker.ApkLibraryInstaller:

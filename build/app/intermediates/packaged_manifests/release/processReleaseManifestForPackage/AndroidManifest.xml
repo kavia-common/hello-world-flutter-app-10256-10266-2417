@@ -10,11 +10,11 @@
     <!-- Location permissions required by geolocator for ride location features -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <!--
          Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
          https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
-
          In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin.
     -->
     <queries>
@@ -65,18 +65,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!--
              Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
         -->
+
+
         <!--
              Google Maps API key for google_maps_flutter plugin.
-             Matches the Connected_Living app's debug google_maps_api.xml key.
-             Replace with a billing-enabled key for production use.
+             NOTE: Provide this at build time in android/app/src/main/res/values/google_maps_api.xml
+             (e.g. <string name="google_maps_key">YOUR_KEY</string>) to avoid hardcoding secrets.
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCv_5zK9gY5rZfL36LspmVQIBXJ3wSrAzQ" />
+            android:value="@string/google_maps_key" />
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />

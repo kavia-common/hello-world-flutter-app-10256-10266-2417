@@ -203,7 +203,8 @@ int string call_notification_hang_up_action 0x7f0b0004
 int string call_notification_incoming_text 0x7f0b0005
 int string call_notification_ongoing_text 0x7f0b0006
 int string call_notification_screening_text 0x7f0b0007
-int string status_bar_notification_info_overflow 0x7f0b0008
+int string google_maps_key 0x7f0b0008
+int string status_bar_notification_info_overflow 0x7f0b0009
 int style LaunchTheme 0x7f0c0000
 int style NormalTheme 0x7f0c0001
 int style TextAppearance_Compat_Notification 0x7f0c0002
