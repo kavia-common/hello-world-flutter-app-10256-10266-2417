@@ -18,7 +18,7 @@ class DefaultNotesRepository implements NotesRepository {
   })  : _dao = dao,
         _api = api,
         _uuid = uuid ?? const Uuid(),
-        _now = now ?? DateTime.now().millisecondsSinceEpoch;
+        _now = now ?? (() => DateTime.now().millisecondsSinceEpoch);
 
   final NotesDao _dao;
   final NotesApi _api;
@@ -27,7 +27,8 @@ class DefaultNotesRepository implements NotesRepository {
 
   final String _syncKey = 'notes';
 
-  final ValueNotifier<SyncStatus> _syncStatus = const ValueNotifier<SyncStatus>(SyncIdle());
+  // ValueNotifier's constructor is not const.
+  final ValueNotifier<SyncStatus> _syncStatus = ValueNotifier<SyncStatus>(const SyncIdle());
 
   final StreamController<void> _dbChanged = StreamController<void>.broadcast();
 
