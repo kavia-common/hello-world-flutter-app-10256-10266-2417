@@ -82,45 +82,87 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(isEditing ? 'Edit Note' : 'New Note'),
-        actions: <Widget>[
-          IconButton(
-            tooltip: 'Save',
-            onPressed: _save,
-            icon: const Icon(Icons.check),
-          ),
-          if (isEditing)
-            IconButton(
-              tooltip: 'Delete',
-              onPressed: _delete,
-              icon: const Icon(Icons.delete_outline),
-            ),
-        ],
+        title: const Text('Note Organizer'),
+        // Kotlin screenshot doesn't show action icons; actions moved to bottom buttons.
       ),
       body: _controller.isLoading
           ? const Center(child: CircularProgressIndicator())
           : Padding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.fromLTRB(12, 12, 12, 0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  const Text(
+                    'Title',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                  ),
+                  const SizedBox(height: 6),
                   TextField(
                     controller: _title,
-                    decoration: const InputDecoration(hintText: 'Title'),
+                    decoration: const InputDecoration(),
                     textInputAction: TextInputAction.next,
                   ),
                   const SizedBox(height: 12),
+                  const Text(
+                    'Content',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                  ),
+                  const SizedBox(height: 6),
                   Expanded(
                     child: TextField(
                       controller: _content,
-                      decoration: const InputDecoration(hintText: 'Write something…'),
+                      decoration: const InputDecoration(),
                       maxLines: null,
                       expands: true,
                       keyboardType: TextInputType.multiline,
+                      textAlignVertical: TextAlignVertical.top,
                     ),
                   ),
+                  const SizedBox(height: 12),
                 ],
               ),
             ),
+      bottomNavigationBar: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: SizedBox(
+                  height: 40,
+                  child: FilledButton(
+                    onPressed: _save,
+                    style: FilledButton.styleFrom(
+                      backgroundColor: const Color(0xFF5A2DFF),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                      textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                    ),
+                    child: const Text('SAVE'),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: SizedBox(
+                  height: 40,
+                  child: OutlinedButton(
+                    onPressed: isEditing ? _delete : null,
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: const Color(0xFF5A2DFF),
+                      side: const BorderSide(color: Color(0xFF5A2DFF), width: 1),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                      textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                    ),
+                    child: const Text('DELETE'),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

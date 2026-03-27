@@ -18,14 +18,13 @@ class NoteListTile extends StatelessWidget {
     final dt = DateTime.fromMillisecondsSinceEpoch(note.updatedAt);
     final formatted = DateFormat.yMMMd().add_jm().format(dt);
 
-    return Material(
-      color: Theme.of(context).colorScheme.surface,
-      borderRadius: BorderRadius.circular(18),
+    // Kotlin shows a 3-line stack inside a bordered, slightly rounded card.
+    return Card(
       child: InkWell(
-        borderRadius: BorderRadius.circular(18),
         onTap: onTap,
+        borderRadius: BorderRadius.circular(5),
         child: Padding(
-          padding: const EdgeInsets.all(14),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -35,17 +34,17 @@ class NoteListTile extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-              const SizedBox(height: 6),
+              const SizedBox(height: 4),
               Text(
-                note.content,
+                note.content.isEmpty ? ' ' : note.content,
                 style: Theme.of(context).textTheme.bodyMedium,
-                maxLines: 2,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 4),
               Text(
-                formatted,
-                style: TextStyle(color: Theme.of(context).colorScheme.onSurfaceVariant),
+                'Modified: $formatted',
+                style: Theme.of(context).textTheme.labelMedium,
               ),
             ],
           ),

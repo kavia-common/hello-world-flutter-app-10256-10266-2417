@@ -70,12 +70,30 @@ class _NotesListScreenState extends State<NotesListScreen> with WidgetsBindingOb
               appBar: AppBar(
                 title: const Text('Notes'),
                 actions: <Widget>[
+                  // Match Kotlin screenshot: info + overflow on the right.
                   IconButton(
-                    tooltip: 'Sync',
+                    tooltip: 'Info',
                     onPressed: () {
-                      controller.manualSync();
+                      // No-op informational action placeholder (matches iconography only).
+                      // Intentionally does not change functionality.
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Offline Notes')),
+                      );
                     },
-                    icon: const Icon(Icons.sync),
+                    icon: const Icon(Icons.info_outline),
+                  ),
+                  PopupMenuButton<String>(
+                    tooltip: 'More',
+                    onSelected: (value) {
+                      if (value == 'sync') controller.manualSync();
+                    },
+                    itemBuilder: (context) => const <PopupMenuEntry<String>>[
+                      PopupMenuItem<String>(
+                        value: 'sync',
+                        child: Text('Sync'),
+                      ),
+                    ],
+                    icon: const Icon(Icons.more_vert),
                   ),
                 ],
               ),
@@ -92,25 +110,22 @@ class _NotesListScreenState extends State<NotesListScreen> with WidgetsBindingOb
               body: Column(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
+                    padding: const EdgeInsets.fromLTRB(12, 12, 12, 10),
                     child: TextField(
                       decoration: const InputDecoration(
-                        hintText: 'Search notes…',
-                        prefixIcon: Icon(Icons.search),
+                        hintText: 'Search notes...',
                       ),
                       onChanged: controller.setQuery,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: _SyncStatusRow(status: controller.syncStatus),
-                  ),
-                  const SizedBox(height: 8),
+                  // Keep sync status (functionality) but reduce visual prominence to match Kotlin,
+                  // which doesn't show an explicit sync row.
+                  const SizedBox(height: 2),
                   Expanded(
                     child: controller.notes.isEmpty
                         ? const Center(child: Text('No notes yet. Tap + to create one.'))
                         : ListView.separated(
-                            padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+                            padding: const EdgeInsets.fromLTRB(12, 0, 12, 16),
                             itemBuilder: (context, index) {
                               final note = controller.notes[index];
                               return NoteListTile(
@@ -124,7 +139,7 @@ class _NotesListScreenState extends State<NotesListScreen> with WidgetsBindingOb
                                 },
                               );
                             },
-                            separatorBuilder: (_, __) => const SizedBox(height: 10),
+                            separatorBuilder: (_, __) => const SizedBox(height: 8),
                             itemCount: controller.notes.length,
                           ),
                   ),

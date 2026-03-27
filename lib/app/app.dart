@@ -13,7 +13,7 @@ class OfflineNotesApp extends StatelessWidget {
     return MaterialApp(
       title: 'Notes',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightGrey(),
+      theme: AppTheme.kotlinNotesLight(),
       home: const NotesListScreen(),
     );
   }
