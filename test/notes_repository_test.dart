@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:offline_notes/features/notes/data/local/notes_dao.dart';
@@ -6,8 +8,15 @@ import 'package:offline_notes/features/notes/data/remote/in_memory_notes_api.dar
 import 'package:offline_notes/features/notes/data/repository/default_notes_repository.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  Future<NotesDatabase> _openTestDb() async {
+    final dir = await Directory.systemTemp.createTemp('offline_notes_test_');
+    return NotesDatabase.open(dbDirectoryPath: dir.path);
+  }
+
   test('search treats % and _ literally (in-memory filter)', () async {
-    final db = await NotesDatabase.open();
+    final db = await _openTestDb();
     final dao = NotesDao(db.db);
     final api = InMemoryNotesApi();
     final repo = DefaultNotesRepository(dao: dao, api: api);
@@ -20,11 +29,13 @@ void main() {
 
     final resultsUnderscore = await repo.observeNotes('_').first;
     expect(resultsUnderscore.any((n) => n.id == id), isTrue);
+
+    await db.db.close();
   });
 
   test('sync uses LWW: remote older does not overwrite newer local', () async {
     int now = 1000;
-    final db = await NotesDatabase.open();
+    final db = await _openTestDb();
     final dao = NotesDao(db.db);
     final api = InMemoryNotesApi();
     final repo = DefaultNotesRepository(dao: dao, api: api, now: () => now);
@@ -46,11 +57,13 @@ void main() {
     final after = await repo.observeNote(id).first;
     expect(after!.title, 't2');
     expect(after.updatedAt, 2000);
+
+    await db.db.close();
   });
 
   test('tombstone delete uploaded then purged locally after sync', () async {
     int now = 1000;
-    final db = await NotesDatabase.open();
+    final db = await _openTestDb();
     final dao = NotesDao(db.db);
     final api = InMemoryNotesApi();
     final repo = DefaultNotesRepository(dao: dao, api: api, now: () => now);
@@ -66,5 +79,7 @@ void main() {
     // After purge, observeNotes should not contain it; observeNote might be null due to purge.
     final list = await repo.observeNotes('').first;
     expect(list.any((n) => n.id == id), isFalse);
+
+    await db.db.close();
   });
 }

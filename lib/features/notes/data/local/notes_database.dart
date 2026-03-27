@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
@@ -11,9 +13,22 @@ class NotesDatabase {
 
   // PUBLIC_INTERFACE
   /// Opens (and migrates if needed) the notes SQLite database.
-  static Future<NotesDatabase> open() async {
-    final dir = await getApplicationDocumentsDirectory();
-    final path = p.join(dir.path, 'offline_notes.db');
+  ///
+  /// In production, this resolves the app documents directory via `path_provider`.
+  /// In tests, pass [dbDirectoryPath] to avoid platform channel usage.
+  static Future<NotesDatabase> open({String? dbDirectoryPath}) async {
+    final String directoryPath;
+    if (dbDirectoryPath != null) {
+      directoryPath = dbDirectoryPath;
+    } else {
+      final dir = await getApplicationDocumentsDirectory();
+      directoryPath = dir.path;
+    }
+
+    // Ensure directory exists when running in tests (temporary directories).
+    await Directory(directoryPath).create(recursive: true);
+
+    final path = p.join(directoryPath, 'offline_notes.db');
 
     final db = await openDatabase(
       path,
